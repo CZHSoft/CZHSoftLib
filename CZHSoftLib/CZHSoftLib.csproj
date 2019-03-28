@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FECAD031-CFD0-44BC-8028-4FCE730C3789}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CZHSoftLib</RootNamespace>
+    <AssemblyName>CZHSoftLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CompressHelper.cs" />
+    <Compile Include="Common\ConfigurationHelper.cs" />
+    <Compile Include="Common\DateTimeHelper.cs" />
+    <Compile Include="Common\ExcelHelper.cs" />
+    <Compile Include="Common\FileHelper.cs" />
+    <Compile Include="Common\JsonHelper.cs" />
+    <Compile Include="Common\SerialDictionary.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Controls\LoadingCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OperateBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OperateBar.designer.cs">
+      <DependentUpon>OperateBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScrollingText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Waitting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Waitting.designer.cs">
+      <DependentUpon>Waitting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DllLoader\CoreLoader.cs" />
+    <Compile Include="DllLoader\LocalDllLoader.cs" />
+    <Compile Include="GPS\GpsDeviation.cs" />
+    <Compile Include="GPS\ProtocolHelper.cs" />
+    <Compile Include="Http\HttpCookieHelper.cs" />
+    <Compile Include="Http\HttpHelper.cs" />
+    <Compile Include="IOCP\AsyncSendBufferManager.cs" />
+    <Compile Include="IOCP\AsyncSocketInvokeElement.cs" />
+    <Compile Include="IOCP\AsyncSocketServer.cs" />
+    <Compile Include="IOCP\AsyncSocketUserToken.cs" />
+    <Compile Include="IOCP\AsyncSocketUserTokenPool.cs" />
+    <Compile Include="IOCP\DaemonThread.cs" />
+    <Compile Include="IOCP\DynamicBufferManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NetWork\AsyncSocketClient.cs" />
+    <Compile Include="NetWork\SocketServer.cs" />
+    <Compile Include="Regex\RegexHelper.cs" />
+    <Compile Include="Security\AESCBCLib.cs" />
+    <Compile Include="SQLite\SQLiteHelper.cs" />
+    <Compile Include="WCF\WcfBindingType.cs" />
+    <Compile Include="WCF\WcfServer.cs" />
+    <Compile Include="Xml\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\OperateBar.resx">
+      <DependentUpon>OperateBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ScrollingText.resx">
+      <DependentUpon>ScrollingText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Waitting.resx">
+      <DependentUpon>Waitting.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
